@@ -1,0 +1,122 @@
+#head{
+    margin-top: -10px;
+    margin-left:-10px;
+    width:1550px;
+    position:relative;
+}
+#head1{
+        margin-left:-10px;
+        width:1550px;
+        height:50px;
+        position:relative;
+        /* background-image: linear-gradient(to right,pink,grey); */
+        background-image: linear-gradient(to left,rgb(124, 124, 254),rgb(131, 238, 131));
+}
+#head1:hover{
+    background-image: linear-gradient(to left,rgb(131, 238, 131),rgb(124, 124, 254));
+}
+.btn{
+    background-image: linear-gradient(to right,pink,grey);
+    /* border:2px solid white; */
+    border-radius: 5px;
+    color:black;
+    transition-duration: 0.4s;
+    font-weight:400;
+}
+.btn4{
+    /* background-image: linear-gradient(to right,pink,grey); */
+    /* border:2px solid white; */
+    background-image: linear-gradient(to right,rgb(252, 169, 175),rgb(189, 189, 241));
+    border-radius: 5px;
+    color:black;
+    transition-duration: 0.4s;
+    font-weight:400;
+}
+
+.btn:hover{
+    color:white;
+    background-image: linear-gradient(to right,grey,pink);
+    /* background-image: linear-gradient(rgb(122, 238, 238),rgb(113, 207, 113)); */
+}
+
+#btn1{
+    /* background-image: linear-gradient(to right,rgb(124, 124, 254),rgb(131, 238, 131));
+     */
+     background-image: linear-gradient(to left,rgb(252, 169, 175),rgb(189, 189, 241));
+    /* border:2px solid white; */
+    border-radius: 5px;
+    color:black;
+    border:none;
+    width:200px;
+    height:40px;
+    transition-duration: 0.4s;
+    margin-left:1150px;
+
+}
+
+#btn1:hover{
+    background-image: linear-gradient(to left,pink,grey);
+}
+input:hover{
+    background-image: linear-gradient(to right,rgb(252, 169, 175),rgb(189, 189, 241));
+}
+option:hover{
+    background-image: linear-gradient(to right,rgb(252, 169, 175),rgb(189, 189, 241));
+}
+
+div{
+    text-align: center;
+}
+label{
+    text-align: left;
+}
+
+#title{
+    height:150px;
+    /* width:500px; */
+}
+@media (max-width: 750px) {
+    .container form{
+        overflow-y: scroll;
+    }
+    .container form::-webkit-scrollbar{
+       display: none;
+    }
+    form .fields .input-field{
+        width: calc(100% / 2 - 15px);
+    }
+}
+
+@media (max-width: 550px) {
+    form .fields .input-field{
+        width: 100%;
+    }
+} 
+
+@media(max-width: 1250px)
+{
+    h2#head1{
+        width: 100%;
+    }
+}
+@media(max-width: 1250px)
+{
+    h2#head{
+        width: 100%;
+    }
+}
+@media(max-width: 1250px)
+{
+    button#btn1{
+        margin-left:200px;
+        height:60px;
+    }
+}
+body{
+    margin-top:-10px;
+    width:100%;
+    background-image: linear-gradient(to left,rgb(150, 150, 247),lightgreen);
+}
+body:hover{
+    background-image: linear-gradient(to left,rgb(131, 238, 131),rgb(161, 161, 254));
+}
