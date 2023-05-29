@@ -7,7 +7,7 @@ import { Login } from 'src/app/class/login';
   providedIn: 'root'
 })
 export class LoginService {
-
+  loginStatus: boolean = false;
   constructor(private httpclient :HttpClient) { }
 
   checkUserRolebyEmail(email:String):Observable<any>{

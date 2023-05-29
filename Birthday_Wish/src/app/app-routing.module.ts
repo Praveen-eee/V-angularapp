@@ -1,66 +1,75 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminComponent } from './admin/admin.component';
-import { UserComponent } from './user/user.component';
-import { SignupComponent } from './signup/signup.component';
+import { SignupComponent } from './components/auth/signup/signup.component';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { AddThemeComponent } from './admin/addtheme/addtheme.component';
-import { AddonComponent } from './admin/addon/addon.component';
-import { AddmenuComponent } from './admin/addmenu/addmenu.component';
-import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { DashboardComponent } from './components/adminside/dashboard/dashboard.component';
 import { LogComponent } from './log/log.component';
-import { AddaddonsComponent } from './admin/addon/addaddons/addaddons.component';
-import { UpdateaddonsComponent } from './admin/addon/updateaddons/updateaddons.component';
-import { AddonHomeComponent } from './admin/addon/addon-home/addon-home.component';
-import { AddaddmenuComponent } from './admin/addmenu/addaddmenu/addaddmenu.component';
-import { UpdateaddmenuComponent } from './admin/addmenu/updateaddmenu/updateaddmenu.component';
-import { AddmenuHomeComponent } from './admin/addmenu/addmenu-home/addmenu-home.component';
-import { NewThemeComponent } from './admin/addtheme/new-theme/new-theme.component';
-import { ThemeHomeComponent } from './admin/addtheme/theme-home/theme-home.component';
-import { UpdatethemeComponent } from './admin/addtheme/updatetheme/updatetheme.component';
-import { UserHomepageComponent } from './user/user-homepage/user-homepage.component';
-import { BookingComponent } from './user/booking/booking.component';
-import { ViewbookingComponent } from './user/viewbooking/viewbooking.component';
+import { AddaddonsComponent } from './components/adminside/addons/addaddons/addaddons.component';
+import { UpdateaddonsComponent } from './components/adminside/addons/updateaddons/updateaddons.component';
+import { AddonHomeComponent } from './components/adminside/addons/addon-home/addon-home.component';
+import { AddaddmenuComponent } from './components/adminside/foodmenu/addaddmenu/addaddmenu.component';
+import { UpdateaddmenuComponent } from './components/adminside/foodmenu/updateaddmenu/updateaddmenu.component';
+import { AddmenuHomeComponent } from './components/adminside/foodmenu/addmenu-home/addmenu-home.component';
+import { NewThemeComponent } from './components/adminside/themes/new-theme/new-theme.component';
+import { ThemeHomeComponent } from './components/adminside/themes/theme-home/theme-home.component';
+import { UpdatethemeComponent } from './components/adminside/themes/updatetheme/updatetheme.component';
+import { UserHomepageComponent } from './components/customerside/user-homepage/user-homepage.component';
+import { ViewbookingComponent } from './components/customerside/mybooking/mybooking.component';
+
+import { AuthComponent } from './components/auth/auth.component';
+import { AdminsideComponent } from './components/adminside/adminside.component';
+import { AddonsComponent } from './components/adminside/addons/addons.component';
+import { FoodmenuComponent } from './components/adminside/foodmenu/foodmenu.component';
+import { ThemesComponent } from './components/adminside/themes/themes.component';
+import { CustomersideComponent } from './components/customerside/customerside.component';
+import { AddeventComponent } from './components/customerside/addevent/addevent.component';
+import { EditEventComponent } from './components/customerside/edit-event/edit-event.component';
+
 const routes: Routes = [
       { path: '', component: LoginComponent},
-      { path: 'admin', component: AdminComponent,
+      { path: 'admin', component: AdminsideComponent, 
         children:[
           {path:"themeHome",component:DashboardComponent},
           {path:"",component:DashboardComponent},
-          { path: 'addtheme', component: AddThemeComponent,
+          { path: 'addtheme', component: ThemesComponent,
           children:[
             {path: "",component:NewThemeComponent},            
             {path: "updatetheme/:themeId", component: UpdatethemeComponent}
           ]
         },
-          { path: "addmenu", component: AddmenuComponent,
+          { path: "addmenu", component: FoodmenuComponent,
           children:[
             {path: "",component:AddmenuHomeComponent},
             {path:"Addaddmenu", component: AddaddmenuComponent},
             {path: "Updateaddmenu/:foodMenuID", component: UpdateaddmenuComponent}
           ]
         },
-          { path: 'addon', component: AddonComponent,
+          { path: 'addon', component: AddonsComponent,
           children:[
             {path : "", component:AddonHomeComponent},
             {path : "addAddon",component:AddaddonsComponent},
             {path : "updateaddons/:addOnid", component:UpdateaddonsComponent}
         ]
         }
-      ]},
-      { path: 'user', component: UserComponent,
+      ],
+      // canActivate: [AuthComponent]
+    },
+      { path: 'user', component: CustomersideComponent,
       children:[
         { path: '', component: UserHomepageComponent},
         { path: 'userhome', component: UserHomepageComponent},
-        { path: 'bookevent', component:BookingComponent},
-        { path: 'viewbookevent', component:ViewbookingComponent}
+        { path: 'bookevent', component:AddeventComponent},
+        { path: 'viewbookevent', component:ViewbookingComponent},
+        { path: 'editEvent/:eventId' ,component:EditEventComponent}
       ]
     },
       { path: 'home', component: HomeComponent},
       { path: 'signup', component: SignupComponent},
       { path: 'login', component: LoginComponent},
 
+
+      { path: 'log', component: LogComponent},
 
       
 ];
